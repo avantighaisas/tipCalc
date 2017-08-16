@@ -100,10 +100,10 @@ class ViewController: UIViewController {
         totalAmt.text = formattedGrandTotal
         // display feedback message
         if tipSeg.selectedSegmentIndex == 0{
-            feedbackMsg.text = "\u{1F914} We need to improve on"
+            feedbackMsg.text = "\u{1F914} Sorry. Seems you had a bad experience. What went wrong today?"
         }
         else{
-            feedbackMsg.text = "\u{1F600} We did good job in"
+            feedbackMsg.text = "\u{1F600} Thank you. How did we do today?"
         }
         
         // Clear the like button titles
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     }
     func updateUsersLikes(_ sender: UIButton){
         if tipSeg.selectedSegmentIndex == 0{
-            sender.setTitle("\u{2705}", for: [])
+            sender.setTitle("\u{1F44E}", for: [])
         }
         else{
             sender.setTitle("\u{1F44D}", for: [])
