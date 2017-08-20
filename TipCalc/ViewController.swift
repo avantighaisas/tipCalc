@@ -80,7 +80,16 @@ class ViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("view did load")
+        let genericBorderColor : UIColor = UIColor( red: 0.0, green: 0.47843137250000001, blue:1.0, alpha: 1.0 )
+        let genericBorderWidth = CGFloat(1.0)
+        totalBillAmt.layer.borderColor = genericBorderColor.cgColor
+        totalBillAmt.layer.borderWidth = genericBorderWidth
+        
+        tipToPay.layer.borderColor = genericBorderColor.cgColor
+        tipToPay.layer.borderWidth = genericBorderWidth
+        
+        totalAmt.layer.borderColor = genericBorderColor.cgColor
+        totalAmt.layer.borderWidth = genericBorderWidth
     }
 
     
@@ -100,10 +109,10 @@ class ViewController: UIViewController {
         totalAmt.text = formattedGrandTotal
         // display feedback message
         if tipSeg.selectedSegmentIndex == 0{
-            feedbackMsg.text = "\u{1F914} Sorry. Seems you had a bad experience. What went wrong today?"
+            feedbackMsg.text = "\u{1F614} Sorry. Seems you had a bad experience. What went wrong today?"
         }
         else{
-            feedbackMsg.text = "\u{1F600} Thank you. How did we do today?"
+            feedbackMsg.text = "\u{263A} Thank you. How did we do today?"
         }
         
         // Clear the like button titles
