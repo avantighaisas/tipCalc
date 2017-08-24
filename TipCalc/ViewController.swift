@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var serviceLabel: UIButton!
     @IBOutlet weak var foodLabel: UIButton!
     
-   
+    @IBOutlet var homeScreenView: UIView!
+    
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -32,12 +33,10 @@ class ViewController: UIViewController {
     
     @IBAction func tipDidChange(_ sender: UISegmentedControl) {
         calTotalAmts()
-        
     }
     
     
     @IBAction func foodTapped(_ sender: UIButton) {
-        
         updateUsersLikes(sender)
     }
     
@@ -59,12 +58,16 @@ class ViewController: UIViewController {
         let defaults = UserDefaults.standard
         let defaultTipStored = defaults.integer(forKey: "defaultTip")
         tipSeg.selectedSegmentIndex = defaultTipStored
+        self.homeScreenView.alpha = 1
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("view did appear")
         totalBillAmt.becomeFirstResponder()
+        UIView.animate(withDuration: 1.5, animations: {
+            self.homeScreenView.alpha = 1
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -91,7 +94,7 @@ class ViewController: UIViewController {
         totalAmt.layer.borderColor = genericBorderColor.cgColor
         totalAmt.layer.borderWidth = genericBorderWidth
     }
-
+    
     
     func calTotalAmts (){
         let billAmt = Double(totalBillAmt.text!) ?? 0

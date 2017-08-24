@@ -183,6 +183,7 @@
                         <outlet property="ambianceLabel" destination="MRG-3o-2CD" id="JUf-lc-IZg"/>
                         <outlet property="feedbackMsg" destination="M95-wJ-ONC" id="R5G-1E-QAm"/>
                         <outlet property="foodLabel" destination="ybf-M3-NHy" id="7Fz-NL-aGp"/>
+                        <outlet property="homeScreenView" destination="8bC-Xf-vdC" id="IfT-E4-9UC"/>
                         <outlet property="serviceLabel" destination="tsx-ae-5Cy" id="9hh-sY-3ca"/>
                         <outlet property="tipSeg" destination="iip-YF-JtI" id="Ltl-eX-mhw"/>
                         <outlet property="tipToPay" destination="gkO-87-2zt" id="qbx-Ui-XYF"/>
@@ -244,6 +245,7 @@
                     <navigationItem key="navigationItem" id="Jvx-IE-j5O"/>
                     <connections>
                         <outlet property="defaultTipLabel" destination="auI-Ff-8z9" id="wj9-7c-H49"/>
+                        <outlet property="settingsScreenView" destination="DzQ-VV-viu" id="lZP-nh-aFr"/>
                         <outlet property="tipPickerView" destination="28t-zq-MYY" id="KPd-SW-ATA"/>
                     </connections>
                 </viewController>

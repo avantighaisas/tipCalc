@@ -9,11 +9,13 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
-
+    
     @IBOutlet weak var tipPickerView: UIPickerView!
     
     @IBOutlet weak var defaultTipLabel: UITextField!
-        
+    
+    @IBOutlet weak var settingsScreenView: UIView!
+    
     var pickerTip: [String] = [String]()
     
     //MARK: View lifecycle
@@ -24,8 +26,19 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.tipPickerView.dataSource = self
         self.tipPickerView.delegate = self
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+        UIView.animate(withDuration: 1.0, animations: {
+            self.settingsScreenView.alpha = 1
+        })
+    }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        self.settingsScreenView.alpha = 1
+    }
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerTip.count
@@ -35,9 +48,6 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerTip[row]
     }
-    //func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //dosageLabel.text = pickerDataSource[row]
-    //}
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         defaultTipLabel.text = pickerTip[row]
@@ -48,5 +58,5 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
 }
