@@ -22,6 +22,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * Added feedback section : If no tip selected, asked for improvement areas and for any tip given asked which area customer liked.
+* Added app icon
 
 ## Video Walkthrough 
 
